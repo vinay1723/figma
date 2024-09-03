@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --custom-gradient: linear-gradient(139.14deg, #303439 12.4%, #161718 94.96%);
+}
+
+.custom-shadow {
+  @apply shadow-inner;
+  box-shadow: 10px 0px 30px 5px rgba(0, 0, 0, 0.25); /* The custom shadow from tailwind.config.js */
+}
+
+.blurred-border-top::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px; /* Adjust the height as needed */
+  background: rgba(0, 0, 0, 0.1); /* Semi-transparent color */
+  backdrop-filter: blur(10px); /* Apply blur effect */
+  z-index: -1; /* Ensure it’s behind the content */
+}
